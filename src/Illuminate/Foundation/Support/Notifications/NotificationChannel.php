@@ -2,10 +2,12 @@
 
 namespace Illuminate\Foundation\Support\Notifications;
 
-use Illuminate\Contracts\Notifications\Channels\Dispatcher;
 use Illuminate\Contracts\Notifications\Channels\Factory;
+use Illuminate\Contracts\Notifications\Channels\Dispatcher;
 
 /**
- * Class NotificationChannel
+ * Class NotificationChannel.
  */
-abstract class NotificationChannel implements Factory, Dispatcher {}
+abstract class NotificationChannel implements Factory, Dispatcher
+{
+}

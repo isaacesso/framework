@@ -98,7 +98,7 @@ class BroadcastChannel implements Factory, Dispatcher
     public static function createDriver($driver)
     {
         return static::canHandleNotification($driver)
-            ? Container::getInstance()->make(BroadcastChannel::class)
+            ? Container::getInstance()->make(self::class)
             : null;
     }
 }

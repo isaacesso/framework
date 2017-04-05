@@ -2,8 +2,8 @@
 
 namespace Illuminate\Foundation\Support\Providers;
 
-use Illuminate\Notifications\ChannelManager;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Notifications\ChannelManager;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function registerNotificationsChannels()
     {
-        if(empty($this->notificationsChannels))
+        if (empty($this->notificationsChannels))
             return;
 
         $manager = $this->app->make(ChannelManager::class);

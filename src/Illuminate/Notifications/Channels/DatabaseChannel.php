@@ -72,7 +72,7 @@ class DatabaseChannel implements Factory, Dispatcher
     public static function createDriver($driver)
     {
         return static::canHandleNotification($driver)
-            ? Container::getInstance()->make(DatabaseChannel::class)
+            ? Container::getInstance()->make(self::class)
             : null;
     }
 }

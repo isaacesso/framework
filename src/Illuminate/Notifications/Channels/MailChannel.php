@@ -209,11 +209,13 @@ class MailChannel implements Factory, Dispatcher
      */
     public static function createDriver($driver)
     {
-        if(! static::canHandleNotification($driver)) return null;
+        if (! static::canHandleNotification($driver)) {
+            return null;
+        }
 
         $app = Container::getInstance();
 
-        return $app->make(MailChannel::class)->setMarkdownResolver(function () use ($app) {
+        return $app->make(self::class)->setMarkdownResolver(function () use ($app) {
             return $app->make(Markdown::class);
         });
     }

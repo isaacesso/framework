@@ -4,11 +4,21 @@ namespace Nexmo;
 
 use Nexmo\Client\Credentials\Basic as NexmoCredentials;
 
-class Client { public function __construct(NexmoCredentials $credentials) {} }
+class Client
+{
+    public function __construct(NexmoCredentials $credentials)
+    {
+    }
+}
 
 namespace Nexmo\Client\Credentials;
 
-class Basic { public function __construct($key, $secret) {} }
+class Basic
+{
+    public function __construct($key, $secret)
+    {
+    }
+}
 
 namespace Illuminate\Tests\Notifications;
 

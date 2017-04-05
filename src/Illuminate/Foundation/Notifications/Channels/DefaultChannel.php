@@ -4,8 +4,8 @@ namespace Illuminate\Foundation\Notifications\Channels;
 
 use Illuminate\Support\Str;
 use Illuminate\Notifications\Channels\MailChannel;
-use Illuminate\Notifications\Channels\NexmoSmsChannel;
 use Illuminate\Notifications\Channels\DatabaseChannel;
+use Illuminate\Notifications\Channels\NexmoSmsChannel;
 use Illuminate\Notifications\Channels\BroadcastChannel;
 use Illuminate\Contracts\Notifications\Channels\Factory;
 use Illuminate\Notifications\Channels\SlackWebhookChannel;
@@ -31,7 +31,7 @@ class DefaultChannel implements Factory
      */
     public static function createDriver($driver)
     {
-        if(! static::canHandleNotification($driver)) {
+        if (! static::canHandleNotification($driver)) {
             return null;
         }
 
@@ -98,5 +98,4 @@ class DefaultChannel implements Factory
     {
         return SlackWebhookChannel::createDriver($driver);
     }
-
 }

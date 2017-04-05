@@ -142,13 +142,12 @@ class ChannelManager extends Manager implements DispatcherContract, FactoryContr
         try {
             $channel = $this->createChannel($driver);
 
-            if($channel instanceof ChannelDispatcher) {
+            if ($channel instanceof ChannelDispatcher) {
                 return $channel;
             }
 
             return parent::createDriver($driver);
-        }
-        catch (InvalidArgumentException $e) {
+        } catch (InvalidArgumentException $e) {
             if (class_exists($driver)) {
                 return $this->app->make($driver);
             }
@@ -165,7 +164,7 @@ class ChannelManager extends Manager implements DispatcherContract, FactoryContr
      */
     protected function createChannel($driver)
     {
-        foreach($this->channels as $channel) {
+        foreach ($this->channels as $channel) {
             if ($channel::canHandleNotification($driver) &&
                 $channel = $channel::createDriver($driver)) {
                 return $channel;
